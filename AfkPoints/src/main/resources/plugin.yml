@@ -1,0 +1,22 @@
+name: AfkPoints
+version: 1.0.0
+main: dev.afkpoints.AfkPointsPlugin
+api-version: '1.21'
+softdepend: [PlaceholderAPI]
+description: Earn points in an AFK zone and spend them in an AFK shop.
+commands:
+  afkpoints:
+    description: Show your AFK points
+    aliases: [afkbal]
+    permission: afkpoints.use
+  afkshop:
+    description: Open the AFK shop
+    permission: afkpoints.use
+  afkadmin:
+    description: AFK points admin commands
+    permission: afkpoints.admin
+permissions:
+  afkpoints.use:
+    default: true
+  afkpoints.admin:
+    default: op

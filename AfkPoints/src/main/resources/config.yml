@@ -1,0 +1,58 @@
+# Built-in zone earning. Leave disabled if another plugin (e.g. AxAFKZone) awards points
+# by running:  afkadmin give %player% <amount> silent
+# If enabled: players inside the zone earn `points` every `interval-seconds`.
+# Set the zone in game: /afkadmin pos1, /afkadmin pos2, /afkadmin setzone
+earn:
+  enabled: false
+  interval-seconds: 60
+  points: 1
+
+shop:
+  title: "&8AFK Shop"
+  rows: 3
+  items:
+    diamonds:
+      slot: 11
+      material: DIAMOND
+      amount: 3
+      price: 30
+      name: "&b3 Diamonds"
+      lore:
+        - "&7Price: &e{price} points"
+    golden-apple:
+      slot: 13
+      material: GOLDEN_APPLE
+      amount: 2
+      price: 15
+      name: "&62 Golden Apples"
+      lore:
+        - "&7Price: &e{price} points"
+    money:
+      slot: 15
+      material: GOLD_INGOT
+      price: 100
+      name: "&e1000 Coins"
+      lore:
+        - "&7Price: &e{price} points"
+      # If `commands` is set, the item is NOT given; the commands run from console.
+      # Placeholders: %player% and %uuid%
+      commands:
+        - "eco give %uuid% 1000"
+
+messages:
+  prefix: "&8[&bAFK&8] &r"
+  balance: "&7You have &e{balance} &7AFK points."
+  earned: "&a+{points} AFK points &7(total {balance})"
+  not-enough: "&cYou need &e{price} &cpoints but only have &e{balance}&c."
+  inventory-full: "&cYour inventory is full."
+  purchased: "&aPurchased &f{item}&a for &e{price} &apoints."
+  data-not-loaded: "&cYour data is still loading, try again in a moment."
+  pos-set: "&aSet {pos} to your current block."
+  zone-set: "&aAFK zone saved."
+  zone-error: "&cSet pos1 and pos2 (same world) first."
+  player-offline: "&cThat player must be online."
+  invalid-amount: "&cInvalid amount."
+  admin-done: "&a{player} now has &e{balance} &apoints."
+  reloaded: "&aConfig and shop reloaded."
+  players-only: "&cOnly players can use this."
+  usage: "&cUsage: /afkadmin <pos1|pos2|setzone|give|take|set|reload> [player] [amount]"
